@@ -1,0 +1,39 @@
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const rateLimit = require('express-rate-limit');
+const helmet = require('helmet');
+const dotenv = require('dotenv');
+const {errorHandler} = require('./middlewares/errorHandlerMiddleware');
+
+dotenv.config();
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(cors());
+app.use(helmet());
+app.use(rateLimit({
+     windowMs: 15 * 60 * 1000,
+     max: 100 
+}));
+
+// Routes
+app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/recipes', require('./routes/recipeRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/mealplans', require('./routes/mealPlanRoutes'));
+app.use('/api/shoppinglists', require('./routes/shoppingListRoutes'));
+app.use('/api/admin', require('./routes/adminRoutes'));
+
+// Connect DB
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected'))
+    .catch((err) => console.error(err));
+
+// Error Handler
+app.use(errorHandler);
+
+// Start server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
