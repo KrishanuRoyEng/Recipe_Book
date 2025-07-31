@@ -1,0 +1,17 @@
+.home {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.home h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.home .cta-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background: #2b579a;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}

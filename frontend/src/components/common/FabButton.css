@@ -1,0 +1,46 @@
+.fab-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
+
+.fab-button {
+  background-color: #2b579a;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.fab-button:hover {
+  background-color: #1e3e70;
+  transform: scale(1.1);
+}
+
+.fab-tooltip {
+  margin-top: 0.5rem;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.fab-container:hover .fab-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}

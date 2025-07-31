@@ -1,0 +1,27 @@
+.navbar {
+  background-color: #2b579a;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+.logout-btn {
+  background: white;
+  color: #2b579a;
+  border: none;
+  padding: 0.3rem 0.7rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+}

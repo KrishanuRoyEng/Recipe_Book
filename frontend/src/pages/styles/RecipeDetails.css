@@ -1,0 +1,15 @@
+.recipe-details {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.recipe-details img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  margin: 1rem 0;
+}
+.recipe-details ul, .recipe-details ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}

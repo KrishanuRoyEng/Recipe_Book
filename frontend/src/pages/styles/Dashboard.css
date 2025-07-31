@@ -1,0 +1,11 @@
+.dashboard {
+  padding: 2rem;
+}
+.dashboard h1 {
+  margin-bottom: 1rem;
+}
+.dashboard-content {
+  border-top: 1px solid #ddd;
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
