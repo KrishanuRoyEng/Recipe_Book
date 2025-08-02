@@ -1,0 +1,28 @@
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.user-table th, .user-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+.admin-row {
+  background: #f0f8ff;
+}
+.role-btn {
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.role-btn.promote {
+  background: #38a169;
+  color: #fff;
+}
+.role-btn.demote {
+  background: #e53e3e;
+  color: #fff;
+}
+.role-btn:hover {
+  opacity: 0.8;
+}

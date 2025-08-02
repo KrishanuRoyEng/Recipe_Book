@@ -9,6 +9,7 @@ router.route('/')
 
 router.route('/:id')
     .get(auth, getMealPlanById)
-    .delete(auth, deleteMealPlan);
+
+router.delete('/:planId/meals/:mealId', auth, deleteMealPlan);
 
 module.exports = router;

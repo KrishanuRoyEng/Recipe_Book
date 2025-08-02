@@ -8,7 +8,7 @@ router.route('/')
     .get(getComments)            // Public - Get comments for a recipe
     .post(auth, addComment);     // Private - Add a comment
 
-router.route('/:id')
+router.route('/:commentId')
     .put(auth, updateComment)  // Private - Update own comment
     .delete(auth, role('admin'), deleteComment); // Private - Delete own comment
 

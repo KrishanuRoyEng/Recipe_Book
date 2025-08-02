@@ -12,7 +12,7 @@ const recipeSchema = new mongoose.Schema(
     ],
 
     steps: [String],
-    tags: [String],
+    tags: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Tag' }],
     cuisine: String,
     prepTime: Number,
     difficulty: { type: String, enum: ["Easy", "Medium", "Hard"] },

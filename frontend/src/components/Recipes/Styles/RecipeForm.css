@@ -1,0 +1,73 @@
+.recipe-form-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+.recipe-form-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.recipe-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.recipe-form input,
+.recipe-form textarea,
+.recipe-form select {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 0.7rem;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.recipe-form input:focus,
+.recipe-form textarea:focus,
+.recipe-form select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  background: rgba(255,255,255,0.15);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: #4a90e2;
+  color: white;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #357ab8;
+}

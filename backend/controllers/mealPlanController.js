@@ -21,6 +21,7 @@ exports.createOrUpdateMealPlan = async (req, res) => {
 
         res.json(plan);
     } catch(err){
+        console.error("MealPlan error:", err);
         res.status(500).json({message: err.message});
     }
 };
@@ -54,11 +55,16 @@ exports.getMealPlanById = async (req, res) => {
 // @route   DELETE /api/meal-plans/:id
 // @access  Private
 exports.deleteMealPlan = async (req, res) => {
-    try {
-        const plan = await MealPlan.findOneAndDelete({ _id: req.params.id, user: req.user._id });
-        if (!plan) return res.status(404).json({ message: 'Meal plan not found' });
-        res.json({ message: 'Meal plan deleted' });
-    } catch (err) {
-        res.status(500).json({ message: err.message });
-    }
+  try {
+    const { planId, mealId } = req.params;
+    const plan = await MealPlan.findOne({ _id: planId, user: req.user._id }).populate('meals.recipe');
+    if (!plan) return res.status(404).json({ message: 'Meal plan not found' });
+
+    plan.meals = plan.meals.filter(m => m._id.toString() !== mealId);
+    await plan.save();
+
+    res.json(plan); // Return the updated plan with populated recipes
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 };

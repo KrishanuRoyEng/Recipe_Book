@@ -1,0 +1,40 @@
+/* === Global Reset & Fonts === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: #496c90;
+  color: #1f2937;
+}
+
+/* Smooth animations */
+button, input, textarea, select {
+  font-family: inherit;
+  transition: all 0.2s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #456c9b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

@@ -1,0 +1,63 @@
+/* === Layout Wrappers === */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: #1f2937;
+  color: rgb(25, 28, 61);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+header nav a {
+  margin-left: 1.5rem;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+header nav a:hover {
+  color: #fff;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* Footer */
+footer {
+  background: #111827;
+  color: #9ca3af;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Utility classes */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }

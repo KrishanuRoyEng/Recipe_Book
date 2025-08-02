@@ -1,13 +1,146 @@
 .recipes-container {
-  padding: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  position: relative;
 }
+
+/* Background */
+.recipes-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('/images/food-pattern.jpg') center/cover no-repeat;
+  opacity: 0.2;
+  z-index: -2;
+}
+.recipes-container::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+/* Title */
+.recipes-container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+/* Search bar */
 .search-bar {
   width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  max-width: 500px;
+  padding: 0.8rem 1.2rem;
+  margin: 0 auto 2rem;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  outline: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
 }
+.search-bar::placeholder {
+  color: #ddd;
+}
+.search-bar:focus {
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+}
+
+/* Recipes grid */
 .recipes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  animation: fadeIn 1.5s ease-out forwards;
 }
+
+/* Recipe cards */
+.recipe-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 1rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  cursor: pointer;
+}
+.recipe-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+.recipe-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+}
+.recipe-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+  color: #fff;
+}
+.recipe-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* Floating Action Button */
+.fab-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #ff6b35;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 1rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.fab-btn:hover {
+  background: #ff7e50;
+  transform: scale(1.05);
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.difficulty-dropdown {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f8f9fa;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+

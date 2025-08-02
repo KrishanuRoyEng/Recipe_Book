@@ -21,10 +21,12 @@ app.use(rateLimit({
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/recipes', require('./routes/recipeRoutes'));
-app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/mealplans', require('./routes/mealPlanRoutes'));
 app.use('/api/shoppinglists', require('./routes/shoppingListRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
+app.use('/api/tags', require('./routes/tagRoutes'));
+app.use('/api/recipes/:recipeId/comments', require('./routes/commentRoutes'));
 
 // Connect DB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
