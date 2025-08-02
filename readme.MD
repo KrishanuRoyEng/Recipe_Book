@@ -70,7 +70,8 @@ project-root/
 │ │ └── styles/ # Styles
 │ └── vite.config.js # Vite config
 │
-└── start.sh / start.bat # One-click dev starter```
+└── start.sh / start.bat # One-click dev starter
+```
 
 ---
 
@@ -82,7 +83,7 @@ git clone https://github.com/your-username/recipe-planner.git
 cd recipe-planner
 ```
 
-2. Install dependencies
+###2. Install dependencies
 
 Backend:
 ```bash
@@ -94,7 +95,7 @@ Frontend:
 cd ../frontend
 npm install
 ```
-3. Configure Environment
+###3. Configure Environment
 Create .env files in backend/ and frontend/:
 
 Backend .env
@@ -112,12 +113,12 @@ env
 
 VITE_API_BASE_URL=http://localhost:5000/api
 ```
-4. Seed Database
+###4. Seed Database
 ```bash
 cd backend
 node scripts/seed.js
 ```
-5. Run in Development
+###5. Run in Development
 Start backend:
 ```bash
 
@@ -129,7 +130,7 @@ Start frontend:
 cd ../frontend
 npm run dev
 ```
-6. One-Click Start (Cross-platform)
+###6. One-Click Start (Cross-platform)
 Run everything with one command:
 
 On Mac/Linux:
@@ -151,7 +152,7 @@ Double-click `start.bat`
 | `npm run build` (frontend) | Build frontend for production       |
 
 
-🔒 Security & Deployment
+###🔒 Security & Deployment
 Never commit your `.env` files.
 
 For production, use environment variables via your hosting (Render, Heroku, Railway, etc.).
@@ -160,7 +161,7 @@ For images, store assets in Cloudinary instead of local storage.
 
 Use a reverse proxy (NGINX) or serve frontend via Express in production.
 
-🤝 Contributing
+###🤝 Contributing
 1. Fork this repo
 
 2. Create a branch: `git checkout -b feature/your-feature`
@@ -171,7 +172,7 @@ Use a reverse proxy (NGINX) or serve frontend via Express in production.
 
 5. Open a Pull Request
 
-📜 License
+###📜 License
 This project is licensed under the MIT License.
 
 Made with ❤️ by Krishanu Roy
