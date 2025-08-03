@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './Context/AuthProvider.jsx';
-import { ShoppingListProvider } from './Context/ShoppingListContext.jsx';
+import { ShoppingListProvider } from './Context/ShoppingListProvider.jsx';
 import './index.css';
 import App from './App.jsx';
 

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getRecipe, rateRecipe, updateRecipe, deleteRecipe } from "../api/recipeService";
 import { getMealPlans, addMealPlan } from "../api/mealService";
 import { getComments, addComment, updateComment, deleteComment } from "../api/commentService";
-import { useShoppingList } from "../context/ShoppingListContext";
+import { useShoppingList } from "../hooks/useShoppingList";
 import QuickMealPlannerPopup from "../components/recipes/QuickMealPlannerPopup";
 import useAuth from "../hooks/useAuth";
 import TagSelector from "../components/Recipes/TagSelector";

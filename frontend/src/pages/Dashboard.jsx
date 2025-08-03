@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
-import { useShoppingList } from '../context/ShoppingListContext';
+import { useShoppingList } from '../hooks/useShoppingList';
 import FabButton from '../components/Common/FabButton';
 import MealPlannerPopup from '../components/recipes/MealPlannerPopup';
 import UserRoleManagerPopup from '../components/Auth/userRoleManagerPopup';

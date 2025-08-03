@@ -1,7 +1,6 @@
-import { createContext, useState, useContext } from 'react';
+import { useState } from 'react';
+import ShoppingListContext from './ShoppingListContext';
 import { generateShoppingList } from '../api/mealService';
-
-const ShoppingListContext = createContext();
 
 export function ShoppingListProvider({ children }) {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -33,4 +32,3 @@ export function ShoppingListProvider({ children }) {
   );
 }
 
-export const useShoppingList = () => useContext(ShoppingListContext);
