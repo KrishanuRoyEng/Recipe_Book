@@ -10,21 +10,28 @@ dotenv.config();
 const app = express();
 const allowedOrigins = [
   "http://localhost:5173",               // local Vite dev
-  "https://recipe-book-id8a.vercel.app"  // your Vercel frontend
+  "https://recipe-book-id8a.vercel.app",// your Vercel frontend
+  "https://recipe-book-id8a-l5fiz44dz-krishanuroyengs-projects.vercel.app"  
 ];
 
 // Middleware
 app.use(express.json());
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true); // Allow server-to-server
+      if (
+        origin.startsWith("http://localhost") ||
+        origin.endsWith(".vercel.app")
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 app.use(helmet());
 app.use(rateLimit({
      windowMs: 15 * 60 * 1000,
