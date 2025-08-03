@@ -4,37 +4,36 @@ const mongoose = require('mongoose');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const dotenv = require('dotenv');
-const {errorHandler} = require('./middlewares/errorHandlerMiddleware');
+const { errorHandler } = require('./middlewares/errorHandlerMiddleware');
 
 dotenv.config();
 const app = express();
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://recipe-book-id8a.vercel.app",
-  "https://recipe-book-id8a-l5fiz44dz-krishanuroyengs-projects.vercel.app",
-  "https://recipe-book-id8a-jyv2qe44e-krishanuroyengs-projects.vercel.app"
-];
 // Middleware
 app.use(express.json());
 
+// CORS configuration
 const corsOptions = {
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
+    if (
+      !origin || 
+      origin.startsWith("http://localhost") || 
+      origin.endsWith(".vercel.app")
+    ) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
     }
   },
   credentials: true,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
   allowedHeaders: "Content-Type,Authorization"
 };
 
 // Apply CORS before routes
 app.use(cors(corsOptions));
 
-// Handle preflight safely (don’t match against broken routes)
+// Handle preflight requests (Express 5 syntax)
 app.options('/{*any}', cors(corsOptions));
 
 app.use(helmet());
@@ -43,6 +42,7 @@ app.use(rateLimit({
      max: 100 
 }));
 
+// Log all requests (helps debugging)
 app.use((req, res, next) => {
   console.log(req.method, req.originalUrl);
   next();
@@ -57,7 +57,8 @@ app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/tags', require('./routes/tagRoutes'));
 app.use('/api/recipes/:recipeId/comments', require('./routes/commentRoutes'));
-// Fallback for unmatched routes
+
+// Fallback for unmatched routes (must be LAST)
 app.all('/{*any}', (req, res) => {
   res.status(404).json({ message: 'Not Found' });
 });
