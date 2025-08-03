@@ -17,20 +17,25 @@ const allowedOrigins = [
 ];
 // Middleware
 app.use(express.json());
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-    allowedHeaders: "Content-Type,Authorization"
-  })
-);
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type,Authorization"
+};
+
+// Apply CORS before routes
+app.use(cors(corsOptions));
+
+// Handle preflight safely (don’t match against broken routes)
+app.options('/{*any}', cors(corsOptions));
 
 app.use(helmet());
 app.use(rateLimit({
@@ -47,6 +52,10 @@ app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
 app.use('/api/tags', require('./routes/tagRoutes'));
 app.use('/api/recipes/:recipeId/comments', require('./routes/commentRoutes'));
+// Fallback for unmatched routes
+app.all('/{*any}', (req, res) => {
+  res.status(404).json({ message: 'Not Found' });
+});
 
 // Connect DB
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
