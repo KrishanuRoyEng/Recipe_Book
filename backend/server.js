@@ -8,30 +8,32 @@ const {errorHandler} = require('./middlewares/errorHandlerMiddleware');
 
 dotenv.config();
 const app = express();
-const allowedOrigins = [
-  "http://localhost:5173",               // local Vite dev
-  "https://recipe-book-id8a.vercel.app",// your Vercel frontend
-  "https://recipe-book-id8a-l5fiz44dz-krishanuroyengs-projects.vercel.app"  
-];
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://recipe-book-id8a.vercel.app",
+  "https://recipe-book-id8a-l5fiz44dz-krishanuroyengs-projects.vercel.app",
+  "https://recipe-book-id8a-jyv2qe44e-krishanuroyengs-projects.vercel.app"
+];
 // Middleware
 app.use(express.json());
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin) return callback(null, true); // Allow server-to-server
-      if (
-        origin.startsWith("http://localhost") ||
-        origin.endsWith(".vercel.app")
-      ) {
+      if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
       }
     },
     credentials: true,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    allowedHeaders: "Content-Type,Authorization"
   })
 );
+
+app.options('*', cors());  // handle preflight requests
+
 app.use(helmet());
 app.use(rateLimit({
      windowMs: 15 * 60 * 1000,
