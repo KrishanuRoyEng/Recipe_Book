@@ -4,7 +4,7 @@ import { getRecipe, rateRecipe, updateRecipe, deleteRecipe } from "../api/recipe
 import { getMealPlans, addMealPlan } from "../api/mealService";
 import { getComments, addComment, updateComment, deleteComment } from "../api/commentService";
 import { useShoppingList } from "../hooks/useShoppingList";
-import QuickMealPlannerPopup from "../components/recipes/QuickMealPlannerPopup";
+import QuickMealPlannerPopup from "../components/Recipes/QuickMealPlannerPopup";
 import useAuth from "../hooks/useAuth";
 import TagSelector from "../components/Recipes/TagSelector";
 import "./styles/RecipeDetails.css";
