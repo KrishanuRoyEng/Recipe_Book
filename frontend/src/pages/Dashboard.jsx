@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import { useShoppingList } from '../hooks/useShoppingList';
 import FabButton from '../components/Common/FabButton';
-import MealPlannerPopup from '../components/recipes/MealPlannerPopup';
+import MealPlannerPopup from '../components/Recipes/MealPlannerPopup';
 import UserRoleManagerPopup from '../components/Auth/userRoleManagerPopup';
 import { getMyRecipes } from '../api/recipeService';
 import { getMealPlans, addMealPlan, deleteMeal } from '../api/mealService';
