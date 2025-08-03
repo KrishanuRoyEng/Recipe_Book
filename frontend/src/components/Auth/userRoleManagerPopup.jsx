@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import { getUsers, updateUserRole, } from '../../api/adminService';
-import './Styles/UserRoleManager.css';
+import './Styles/userRoleManager.css';
 
 export default function UserRoleManagerPopup({ onClose }) {
   const [users, setUsers] = useState([]);
