@@ -32,8 +32,6 @@ app.use(
   })
 );
 
-app.options('*', cors());  // handle preflight requests
-
 app.use(helmet());
 app.use(rateLimit({
      windowMs: 15 * 60 * 1000,
