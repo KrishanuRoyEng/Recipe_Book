@@ -8,8 +8,6 @@ const {errorHandler} = require('./middlewares/errorHandlerMiddleware');
 
 dotenv.config();
 const app = express();
-const cors = require("cors");
-
 const allowedOrigins = [
   "http://localhost:5173",               // local Vite dev
   "https://recipe-book-id8a.vercel.app"  // your Vercel frontend
