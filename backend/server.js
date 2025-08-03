@@ -11,10 +11,7 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-app.use(cors({
-  origin: ['https://recipe-book-8nyp-mf9e0w3xx-krishanuroyengs-projects.vercel.app/', 'http://localhost:5000'],
-  credentials: true
-}));
+app.use(cors());
 app.use(helmet());
 app.use(rateLimit({
      windowMs: 15 * 60 * 1000,
