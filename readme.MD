@@ -47,7 +47,8 @@
 ![Home Page Preview](./frontend/src/assets/home.jpeg)  
 
 ## 📹 DEMO VIDEO
-[▶️ Watch Demo](https://youtu.be/JbIop7EctKc)
+(https://youtu.be/JbIop7EctKc)
+[![Watch the demo ▶️](https://img.youtube.com/vi/JbIop7EctKc/0.jpg)](https://youtu.be/JbIop7EctKc)
 
 ---
 
