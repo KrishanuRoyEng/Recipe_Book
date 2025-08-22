@@ -1,6 +1,7 @@
 # 🍽️ Recipe Planner
 
 <p align="center">
+  <a href="https://recipe-book-pzcn-l3vrz7pqe-krishanuroyengs-projects.vercel.app/" target="_blank">
   <img src="https://img.shields.io/badge/Recipe%20Planner-Cook%20•%20Plan%20•%20Share-ff6b35?style=for-the-badge" alt="Recipe Planner"/>
 </p>
 
