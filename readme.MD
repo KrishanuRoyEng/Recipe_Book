@@ -46,6 +46,9 @@
 
 ![Home Page Preview](./frontend/src/assets/home.jpeg)  
 
+## 📹▶️ DEMO VIDEO
+
+
 ---
 
 ## 📂 Project Structure
