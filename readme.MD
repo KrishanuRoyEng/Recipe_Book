@@ -43,10 +43,8 @@
 
 ## 📸 Preview
 
-> Add your screenshots or demo GIFs here:  
 
 ![Home Page Preview](./frontend/src/assets/home.jpeg)  
-![Recipe Details](./demo/recipe-details.png)
 
 ---
 
