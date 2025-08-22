@@ -1,9 +1,6 @@
 # 🍽️ Recipe Planner
 
-<p align="center">
-  <a href="https://recipe-book-pzcn-l3vrz7pqe-krishanuroyengs-projects.vercel.app/" target="_blank">
-  <img src="https://img.shields.io/badge/Recipe%20Planner-Cook%20•%20Plan%20•%20Share-ff6b35?style=for-the-badge" alt="Recipe Planner"/>
-</p>
+<p align="center"> <a href="https://recipe-book-pzcn-l3vrz7pqe-krishanuroyengs-projects.vercel.app/" target="_blank"> <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Click%20Here-2ea44f?style=for-the-badge&logo=vercel" alt="Live Demo"/> </a> </p> <p align="center"> <img src="https://img.shields.io/badge/Recipe%20Planner-Cook%20•%20Plan%20•%20Share-ff6b35?style=for-the-badge" alt="Recipe Planner"/> </p>
 
 **Recipe Planner** is a full-stack web application that lets you **create, explore, and manage recipes**, plan your weekly meals, generate shopping lists, and more — all in one place.  
 
